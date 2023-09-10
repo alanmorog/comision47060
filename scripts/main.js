@@ -8,9 +8,9 @@ let i = 1;
 //definimos las funciones a utilizar
 
 function cantidadSi(){ //en este caso suponemos que la cantidad de alumnos en el aula se conoce
-    cantidadAlumnos = prompt("cuantos alumnos tiene el aula?: ");
+    cantidadAlumnos = parseInt(prompt("cuantos alumnos tiene el aula?: "));
     for (i; i <= cantidadAlumnos; i++) {
-        let edadAlumnos = prompt("que edad tiene el alumno numero " + i + "?")
+        let edadAlumnos = parseInt(prompt("que edad tiene el alumno numero " + i + "?"))
         if (edadAlumnos >= 18) {
             alumnosMayores++;
         } else
@@ -18,14 +18,16 @@ function cantidadSi(){ //en este caso suponemos que la cantidad de alumnos en el
                 alumnosMenores++;
             } else {
                 alert("el valor no existe, intente de nuevo...");
-                i--;
+                if (i > 1){
+                    i--;
+                }
             }
     }
 }
 
 function cantidadNo(){ //en este caso suponemos que la cantidad de alumnos en el aula no se conoce
     do {
-        let edadAlumnos = prompt("que edad tiene el alumno numero " + i + "?")
+        let edadAlumnos = parseInt(prompt("que edad tiene el alumno numero " + i + "?"))
         if (edadAlumnos >= 18) {
             alumnosMayores++;
             i++;
@@ -40,11 +42,13 @@ function cantidadNo(){ //en este caso suponemos que la cantidad de alumnos en el
                 }
             }
         hayAlumnos = prompt("hay mas alumnos para contar?");
+        hayAlumnos = hayAlumnos.toLowerCase().trim();
     }while(hayAlumnos == "si");
 }
 
 function pregunta() { //preguntar si se conoce la cantidad de alumnos
     cantidad = prompt("se conoce la cantidad de alumnos para contar?");
+    cantidad = cantidad.toLowerCase().trim();
 }
 
 function mostarPantalla(){ //mostrar en pantalla la cantidad de alumnos
@@ -52,7 +56,9 @@ function mostarPantalla(){ //mostrar en pantalla la cantidad de alumnos
     alert("la cantidad de alumnos mayores de edad son: " + alumnosMayores);
 }
 
+
 pregunta();
+
 if (cantidad == "si") {
     cantidadSi();
 }else
