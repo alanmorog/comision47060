@@ -1,3 +1,7 @@
+body {
+    background-color: grey;
+}
+
 div {
     background-color: skyblue;
     width: 500px;
