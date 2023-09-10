@@ -1,0 +1,20 @@
+div {
+    background-color: skyblue;
+    width: 500px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+h1 {
+    font-family: arial;
+    font-style: normal;
+    text-shadow: 2px 2px 2px #000;
+    color: white;
+}
+
+p {
+    font-family: sans-serif;
+    font-style: italic;
+    color: #000;
+    font-size: 20px;
+}
