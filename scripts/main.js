@@ -35,7 +35,9 @@ function cantidadNo(){ //en este caso suponemos que la cantidad de alumnos en el
                 i++;
             } else {
                 alert("el valor no existe, intente de nuevo...");
-                i--;
+                if (i > 1){
+                    i--;
+                }
             }
         hayAlumnos = prompt("hay mas alumnos para contar?");
     }while(hayAlumnos == "si");
