@@ -17,23 +17,217 @@ let opcionAlumno;
 
 //definiendo Array lista de alumnos dentro de objetos------------------------------------
 const listaAlumnos = [
-    {nombre: "Alan", apellido: "Moro", legajo: 5611, edad: 30},
-    {nombre: "Eduardo", apellido: "Gutierrez", legajo: 5612, edad: 45},
-    {nombre: "Esteban", apellido: "Romero", legajo: 5613, edad: 30},
-    {nombre: "Lujan", apellido: "Gomez", legajo: 5614, edad: 28},
-    {nombre: "Daniel", apellido: "Lugano", legajo: 5615, edad: 17},
-    {nombre: "Hernan", apellido: "Agüero", legajo: 5617, edad: 36},
-    {nombre: "Fernando", apellido: "Gomez", legajo: 5618, edad: 36},
-    {nombre: "Santiago", apellido: "Gomez", legajo: 5616, edad: 48},
-    {nombre: "Leandro", apellido: "Rodriguez", legajo: 5619, edad: 29},
-    {nombre: "Alan", apellido: "Ojeda", legajo: 5620, edad: 16},
-    {nombre: "Jonathan", apellido: "Moro", legajo: 5621, edad: 21},
-    {nombre: "leonel", apellido: "Moro", legajo: 5633, edad: 29},
-    {nombre: "Agustina", apellido: "Monges", legajo: 5622, edad: 21},
-    {nombre: "Gino", apellido: "Marchesano", legajo: 5623, edad: 17},
+    { nombre: "Alan", apellido: "Moro", legajo: 5611, edad: 30 },
+    { nombre: "Eduardo", apellido: "Gutierrez", legajo: 5612, edad: 45 },
+    { nombre: "Esteban", apellido: "Romero", legajo: 5613, edad: 30 },
+    { nombre: "Lujan", apellido: "Gomez", legajo: 5614, edad: 28 },
+    { nombre: "Daniel", apellido: "Lugano", legajo: 5615, edad: 17 },
+    { nombre: "Hernan", apellido: "Agüero", legajo: 5617, edad: 36 },
+    { nombre: "Fernando", apellido: "Gomez", legajo: 5618, edad: 36 },
+    { nombre: "Santiago", apellido: "Gomez", legajo: 5616, edad: 48 },
+    { nombre: "Leandro", apellido: "Rodriguez", legajo: 5619, edad: 29 },
+    { nombre: "Alan", apellido: "Ojeda", legajo: 5620, edad: 16 },
+    { nombre: "Jonathan", apellido: "Moro", legajo: 5621, edad: 21 },
+    { nombre: "leonel", apellido: "Moro", legajo: 5633, edad: 29 },
+    { nombre: "Agustina", apellido: "Monges", legajo: 5622, edad: 21 },
+    { nombre: "Gino", apellido: "Marchesano", legajo: 5623, edad: 17 },
 ];
 
+//agregar la lista al Local Storage
 
+const listaAlumnosJSON = JSON.stringify(listaAlumnos);
+localStorage.setItem("listaAlumnos", listaAlumnosJSON);
+
+/* const busca = document.querySelector("#buscarAlumno");
+busca.addEventListener("click", buscaFunction);
+const filtra = document.querySelector("#filtrarAlumno");
+filtra.addEventListener("click", filtraFunction);
+const elimina = document.querySelector("#eliminarAlumno");
+elimina.addEventListener("click", eliminaFunction);
+const agrega = document.querySelector("#agregarAlumno");
+agrega.addEventListener("click", agregaFunction);
+
+function buscaFunction() {
+    let valor = 1;
+    localStorage.setItem("valor", valor);
+}
+
+function filtraFunction() {
+    let valor = 2;
+    localStorage.setItem("valor", valor);
+}
+
+function eliminaFunction() {
+    let valor = 3;
+    localStorage.setItem("valor", valor);
+}
+
+function agregaFunction() {
+    let valor = 4;
+    localStorage.setItem("valor", valor);
+} */
+
+
+// agregar eventos de formularios
+
+const buscarForm = document.querySelector("#buscar-form");
+const opcionInput = document.querySelector("#opcion-input");
+const datoInput = document.querySelector("#dato-input");
+const objetoEncontrado = document.querySelector("#tbody-buscar");
+
+
+buscarForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    console.log(opcionInput.value);
+    if (opcionInput.value == 1) {
+        const alumnosEnLs = JSON.parse(localStorage.getItem("listaAlumnos"));
+        const printAlumno = alumnosEnLs.find((alumno) => alumno.nombre === datoInput.value); //SE BUSCA ALUMNO POR NOMBRE
+        console.log(printAlumno); // SE IMPRIME RESULTADO
+
+        const teErre = document.createElement("tr");
+        objetoEncontrado.appendChild(teErre);
+        const nombreLS = document.createElement("th");
+        const printNombre = JSON.stringify(printAlumno.nombre);
+        nombreLS.innerText = printNombre;
+        teErre.appendChild(nombreLS);
+
+        const apellidoLS = document.createElement("th");
+        const printApellido = JSON.stringify(printAlumno.apellido);
+        apellidoLS.innerText = printApellido;
+        teErre.appendChild(apellidoLS);
+
+        const legajoLS = document.createElement("th");
+        const printLegajo = JSON.stringify(printAlumno.legajo);
+        legajoLS.innerText = printLegajo;
+        teErre.appendChild(legajoLS);
+
+        const edadLS = document.createElement("th");
+        const printEdad = JSON.stringify(printAlumno.edad);
+        edadLS.innerText = printEdad;
+        teErre.appendChild(edadLS);
+        buscarForm.reset();
+    }
+    if (opcionInput.value == 2) {
+        const alumnosEnLs = JSON.parse(localStorage.getItem("listaAlumnos"));
+        const printAlumno = alumnosEnLs.find((alumno) => alumno.apellido === datoInput.value); //SE BUSCA ALUMNO POR NOMBRE
+        console.log(printAlumno); // SE IMPRIME RESULTADO
+
+        const teErre = document.createElement("tr");
+        objetoEncontrado.appendChild(teErre);
+        const nombreLS = document.createElement("th");
+        const printNombre = JSON.stringify(printAlumno.nombre);
+        nombreLS.innerText = printNombre;
+        teErre.appendChild(nombreLS);
+
+        const apellidoLS = document.createElement("th");
+        const printApellido = JSON.stringify(printAlumno.apellido);
+        apellidoLS.innerText = printApellido;
+        teErre.appendChild(apellidoLS);
+
+        const legajoLS = document.createElement("th");
+        const printLegajo = JSON.stringify(printAlumno.legajo);
+        legajoLS.innerText = printLegajo;
+        teErre.appendChild(legajoLS);
+
+        const edadLS = document.createElement("th");
+        const printEdad = JSON.stringify(printAlumno.edad);
+        edadLS.innerText = printEdad;
+        teErre.appendChild(edadLS);
+        buscarForm.reset();
+    }
+    if (opcionInput.value == 3) {
+        const alumnosEnLs = JSON.parse(localStorage.getItem("listaAlumnos"));
+        const printAlumno = alumnosEnLs.find((alumno) => alumno.legajo == datoInput.value); //SE BUSCA ALUMNO POR NOMBRE
+        console.log(printAlumno); // SE IMPRIME RESULTADO
+
+        const teErre = document.createElement("tr");
+        objetoEncontrado.appendChild(teErre);
+        const nombreLS = document.createElement("th");
+        const printNombre = JSON.stringify(printAlumno.nombre);
+        nombreLS.innerText = printNombre;
+        teErre.appendChild(nombreLS);
+
+        const apellidoLS = document.createElement("th");
+        const printApellido = JSON.stringify(printAlumno.apellido);
+        apellidoLS.innerText = printApellido;
+        teErre.appendChild(apellidoLS);
+
+        const legajoLS = document.createElement("th");
+        const printLegajo = JSON.stringify(printAlumno.legajo);
+        legajoLS.innerText = printLegajo;
+        teErre.appendChild(legajoLS);
+
+        const edadLS = document.createElement("th");
+        const printEdad = JSON.stringify(printAlumno.edad);
+        edadLS.innerText = printEdad;
+        teErre.appendChild(edadLS);
+        buscarForm.reset();
+    }
+    if (opcionInput.value == 4) {
+        const alumnosEnLs = JSON.parse(localStorage.getItem("listaAlumnos"));
+        const printAlumno = alumnosEnLs.find((alumno) => alumno.edad == datoInput.value); //SE BUSCA ALUMNO POR NOMBRE
+        console.log(printAlumno); // SE IMPRIME RESULTADO
+
+        const teErre = document.createElement("tr");
+        objetoEncontrado.appendChild(teErre);
+        const nombreLS = document.createElement("th");
+        const printNombre = JSON.stringify(printAlumno.nombre);
+        nombreLS.innerText = printNombre;
+        teErre.appendChild(nombreLS);
+
+        const apellidoLS = document.createElement("th");
+        const printApellido = JSON.stringify(printAlumno.apellido);
+        apellidoLS.innerText = printApellido;
+        teErre.appendChild(apellidoLS);
+
+        const legajoLS = document.createElement("th");
+        const printLegajo = JSON.stringify(printAlumno.legajo);
+        legajoLS.innerText = printLegajo;
+        teErre.appendChild(legajoLS);
+
+        const edadLS = document.createElement("th");
+        const printEdad = JSON.stringify(printAlumno.edad);
+        edadLS.innerText = printEdad;
+        teErre.appendChild(edadLS);
+        buscarForm.reset();
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 function inicio() {
    // alert("Por favor ingrese los numeros correspondientes a cada opcion!");
     //valor = prompt("1 Buscar Alumno / 2 Filtrar Alumno / 3 Eliminar Alumno / 4 Agregar Alumno");
@@ -121,7 +315,7 @@ function eliminarAlumno() {
     let consulPrint = prompt("Desea volver a mostrar la lista de alumnos? 1 si / 2 no");
     if (consulPrint == 1){
         listaAlumnos.forEach((alumno) =>{
-            console.table(alumno);
+        console.table(alumno);
         });
     } else {
         alert("gracias!")
@@ -145,3 +339,6 @@ function agregarAlumno() {
 
     inicio();
 }
+
+
+*/

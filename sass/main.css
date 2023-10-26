@@ -80,4 +80,9 @@ body section .dataConteiner {
 }
 .boton button {
   width: 400px;
+}
+
+#tbody-buscar h5 {
+  font-size: large;
+  color: white;
 }/*# sourceMappingURL=main.css.map */
