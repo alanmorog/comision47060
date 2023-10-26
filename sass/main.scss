@@ -1,0 +1,90 @@
+@import 'variables';
+
+
+body{
+    background-color: $colorFondo;
+    font-family: $fuentes;
+
+    header {
+        margin: 2px;
+        background-color: $colorBordes;
+        font-size: 15px;
+        border-radius: 5px;
+        padding: 5px;
+        color: white;
+        text-align: center;
+        text-shadow: 2px 2px 2px #000;
+
+        div {
+            h1{
+                font-size: 25px;
+            }
+            .tips{
+                color: #000;
+                text-shadow: none;
+                font-style: italic;
+            }
+            margin: 5px;
+            background-color: $colorDiv;
+            border-radius: 5px;
+            padding: 1px;
+        }
+    }
+
+    section {
+        display: inline-grid;
+        background-color: grey;
+        width: 400px;
+        height: auto;
+        margin: 20px;
+        padding: 5px;
+        border-radius: 5px;
+        h3 {
+            margin-left: 30px;
+            text-align: center;
+            font-family: $fuentes;
+            font-size: 25px;
+            color: white;
+            text-shadow: 2px 2px 2px #000;
+        }
+        nav {
+            ul{
+                background-color: #000;
+                margin: 10px;
+                border-radius: 2px;
+                li{
+                    a{
+                        text-decoration: none;
+                        color: white;
+                        text-shadow: 2px 2px 2px #000;
+                    }
+                    text-decoration: none;
+                    text-align: center;
+                    list-style: none;
+                }
+            }
+            ul:hover {
+                background-color: #423838;
+            }
+        }
+        .dataConteiner{
+            display: grid;
+            background-color: gray;
+            width: 100px;
+            height: auto;
+            row-gap: 20px;
+            column-gap: 20px;
+        }
+    }
+}
+
+.boton {
+    margin-top: 10px;
+    margin-left: 20px;
+    width: 400px;
+    height: auto;
+    align-items: center;
+    button {
+        width: 400px;
+    }
+}

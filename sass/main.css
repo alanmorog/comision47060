@@ -1,0 +1,83 @@
+body {
+  background-color: skyblue;
+  font-family: arial;
+}
+body header {
+  margin: 2px;
+  background-color: #084a5e;
+  font-size: 15px;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 2px #000;
+}
+body header div {
+  margin: 5px;
+  background-color: #7898c4;
+  border-radius: 5px;
+  padding: 1px;
+}
+body header div h1 {
+  font-size: 25px;
+}
+body header div .tips {
+  color: #000;
+  text-shadow: none;
+  font-style: italic;
+}
+body section {
+  display: inline-grid;
+  background-color: grey;
+  width: 400px;
+  height: auto;
+  margin: 20px;
+  padding: 5px;
+  border-radius: 5px;
+}
+body section h3 {
+  margin-left: 30px;
+  text-align: center;
+  font-family: arial;
+  font-size: 25px;
+  color: white;
+  text-shadow: 2px 2px 2px #000;
+}
+body section nav ul {
+  background-color: #000;
+  margin: 10px;
+  border-radius: 2px;
+}
+body section nav ul li {
+  text-decoration: none;
+  text-align: center;
+  list-style: none;
+}
+body section nav ul li a {
+  text-decoration: none;
+  color: white;
+  text-shadow: 2px 2px 2px #000;
+}
+body section nav ul:hover {
+  background-color: #423838;
+}
+body section .dataConteiner {
+  display: grid;
+  background-color: gray;
+  width: 100px;
+  height: auto;
+  row-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+}
+
+.boton {
+  margin-top: 10px;
+  margin-left: 20px;
+  width: 400px;
+  height: auto;
+  align-items: center;
+}
+.boton button {
+  width: 400px;
+}/*# sourceMappingURL=main.css.map */

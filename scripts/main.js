@@ -1,82 +1,5 @@
-/* Como premisa del trabajo vamos a simular que estamos en una clase y necesitamos preguntar cantidad de alumnos y  separar a todos los alumnos menores de edad con los mayores de edad, luego de eso mostrar en pantalla la cantidad de alumnos menores y mayores de edad. (teniendo en cuenta que no puede haber menos de un alumno) */
 
-/* //definir las variables a usar
-let alumnosMenores = 0;
-let alumnosMayores = 0;
-let i = 1;
-
-//definimos las funciones a utilizar
-
-function cantidadSi(){ //en este caso suponemos que la cantidad de alumnos en el aula se conoce
-    cantidadAlumnos = parseInt(prompt("cuantos alumnos tiene el aula?: "));
-    for (i; i <= cantidadAlumnos; i++) {
-        let edadAlumnos = parseInt(prompt("que edad tiene el alumno numero " + i + "?"))
-        if (edadAlumnos >= 18) {
-            alumnosMayores++;
-        } else
-            if (edadAlumnos < 18 && edadAlumnos > 0) {
-                alumnosMenores++;
-            } else {
-                alert("el valor no existe, intente de nuevo...");
-                if (i > 1){
-                    i--;
-                }
-            }
-    }
-}
-
-function cantidadNo(){ //en este caso suponemos que la cantidad de alumnos en el aula no se conoce
-    do {
-        let edadAlumnos = parseInt(prompt("que edad tiene el alumno numero " + i + "?"))
-        if (edadAlumnos >= 18) {
-            alumnosMayores++;
-            i++;
-        } else
-            if (edadAlumnos < 18 && edadAlumnos > 0) {
-                alumnosMenores++;
-                i++;
-            } else {
-                alert("el valor no existe, intente de nuevo...");
-                if (i > 1){
-                    i--;
-                }
-            }
-        hayAlumnos = prompt("hay mas alumnos para contar?");
-        hayAlumnos = hayAlumnos.toLowerCase().trim();
-    }while(hayAlumnos == "si");
-}
-
-function pregunta() { //preguntar si se conoce la cantidad de alumnos
-    cantidad = prompt("se conoce la cantidad de alumnos para contar?");
-    cantidad = cantidad.toLowerCase().trim();
-}
-
-function mostarPantalla(){ //mostrar en pantalla la cantidad de alumnos
-    alert("La cantidad de alumnos menores de edad son: " + alumnosMenores);
-    alert("la cantidad de alumnos mayores de edad son: " + alumnosMayores);
-}
-
-
-pregunta();
-
-if (cantidad == "si") {
-    cantidadSi();
-}else
-if (cantidad == "no"){
-    cantidadNo();
-}
-else {
-    alert("no existe el valor, se responde con si o no");
-}
-
-mostarPantalla();
-
-
- */
-
-
-
-/*---------------------------------- PRE ENTREGA 2 ----------------------------------*/
+/*---------------------------------- PRE ENTREGA 3 ----------------------------------*/
 
 //SIGUIENDO CON LA TEMATICA DE ALUMNOS COMO PREMISA VAMOS A ARMAR UN CODIGO QUE INDIQUE 4 OPCIONES,
 /*
@@ -110,13 +33,14 @@ const listaAlumnos = [
     {nombre: "Gino", apellido: "Marchesano", legajo: 5623, edad: 17},
 ];
 
+
 function inicio() {
-    alert("Por favor ingrese los numeros correspondientes a cada opcion!");
-    valor = prompt("1 Buscar Alumno / 2 Filtrar Alumno / 3 Eliminar Alumno / 4 Agregar Alumno");
+   // alert("Por favor ingrese los numeros correspondientes a cada opcion!");
+    //valor = prompt("1 Buscar Alumno / 2 Filtrar Alumno / 3 Eliminar Alumno / 4 Agregar Alumno");
 
     if (valor == 1) {
-        alert("Para buscar alumno escriba alguno de los siguientes numeros: ")
-        opcionAlumno = prompt("Seleccione --- 1: nombre/ 2: apellido/ 3: legajo / 4: edad");
+        //alert("Para buscar alumno escriba alguno de los siguientes numeros: ")
+        //opcionAlumno = prompt("Seleccione --- 1: nombre/ 2: apellido/ 3: legajo / 4: edad");
         buscarAlumno();
     } if (valor == 2 ) {
         alert("Para filtrar alumno escriba alguno de los siguientes numeros: ")
@@ -216,6 +140,8 @@ function agregarAlumno() {
     listaAlumnos.forEach((alumno) =>{
         console.table(alumno);
     });
+    const listaAlumnosJSON = JSON.stringify(listaAlumnos);
+    localStorage.setItem("listaAlumnos", listaAlumnosJSON);
 
     inicio();
 }
