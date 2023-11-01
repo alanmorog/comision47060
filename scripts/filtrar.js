@@ -60,7 +60,6 @@ buscarForm.addEventListener("submit", (e) => {
     if (opcionInput.value == 2) {
         const alumnosEnLs = JSON.parse(localStorage.getItem("listaAlumnos"));
         const printAlumno = alumnosEnLs.filter((alumno) => alumno.apellido.includes(datoInput.value.toLowerCase().trim())); //SE BUSCA ALUMNO POR NOMBRE
-        console.log(printAlumno); // SE IMPRIME RESULTADO
 
         printAlumno.forEach(alumno => {
             const teErre = document.createElement("tr");
@@ -90,7 +89,6 @@ buscarForm.addEventListener("submit", (e) => {
     if (opcionInput.value == 3) {
         const alumnosEnLs = JSON.parse(localStorage.getItem("listaAlumnos"));
         const printAlumno = alumnosEnLs.filter((alumno) => alumno.legajo == datoInput.value.toLowerCase().trim()); //SE BUSCA ALUMNO POR NOMBRE
-        console.log(printAlumno); // SE IMPRIME RESULTADO
 
         printAlumno.forEach(alumno => {
             const teErre = document.createElement("tr");
@@ -120,7 +118,6 @@ buscarForm.addEventListener("submit", (e) => {
     if (opcionInput.value == 4) {
         const alumnosEnLs = JSON.parse(localStorage.getItem("listaAlumnos"));
         const printAlumno = alumnosEnLs.filter((alumno) => alumno.edad == datoInput.value.toLowerCase().trim()); //SE BUSCA ALUMNO POR NOMBRE
-        console.log(printAlumno); // SE IMPRIME RESULTADO
 
         printAlumno.forEach(alumno => {
             const teErre = document.createElement("tr");

@@ -112,7 +112,6 @@ buscarForm.addEventListener("submit", (e) => {
     if (opcionInput.value == 4) {
         const alumnosEnLs = JSON.parse(localStorage.getItem("listaAlumnos"));
         const printAlumno = alumnosEnLs.find((alumno) => alumno.edad == datoInput.value); //SE BUSCA ALUMNO POR NOMBRE
-        console.log(printAlumno); // SE IMPRIME RESULTADO
 
         const teErre = document.createElement("tr");
         objetoEncontrado.appendChild(teErre);
