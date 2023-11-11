@@ -34,7 +34,7 @@ const contenedorInfo = document.querySelector("#contenedor-info");
 
 const listaAlumnosFlecha = async () => {
     try { //intenta cargar los datos que tiene guardado el archivo JSON y si no puede salta un cartel de error 
-        const listaAlumnosFetch = await fetch('../classes/listaAlumnos.json');
+        const listaAlumnosFetch = await fetch ("../classes/listaAlumnos.json");
         const listaAlumnos = await listaAlumnosFetch.json();
         if (localStorage.getItem("listaAlumnos") == null) {
             const listaAlumnosJSON = JSON.stringify(listaAlumnos);
