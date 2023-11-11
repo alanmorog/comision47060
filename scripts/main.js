@@ -33,9 +33,9 @@ const contenedorInfo = document.querySelector("#contenedor-info");
 //Creando un fetch a partir de un JSON local usando async y await--------------
 
 const listaAlumnosFlecha = async () => {
+    const listaAlumnosFetch = await fetch('../classes/listaAlumnos.json');
+    const listaAlumnos = await listaAlumnosFetch.json();
     try { //intenta cargar los datos que tiene guardado el archivo JSON y si no puede salta un cartel de error 
-        const listaAlumnosFetch = await fetch('../classes/listaAlumnos.json');
-        const listaAlumnos = await listaAlumnosFetch.json();
         if (localStorage.getItem("listaAlumnos") == null) {
             const listaAlumnosJSON = JSON.stringify(listaAlumnos);
             localStorage.setItem("listaAlumnos", listaAlumnosJSON.toLowerCase().trim());
@@ -179,7 +179,7 @@ buscarForm.addEventListener("submit", (e) => {
     }
     if (opcionInput.value == 3) { // se ejecuta el codigo si el valor del input es 3
         const alumnosEnLs = JSON.parse(localStorage.getItem("listaAlumnos"));
-        const printAlumno = alumnosEnLs.find((alumno) => alumno.legajo == datoInput.value); 
+        const printAlumno = alumnosEnLs.find((alumno) => alumno.legajo == datoInput.value);
         if (printAlumno == null) {
             Swal.fire({
                 icon: 'warning',
@@ -228,7 +228,7 @@ buscarForm.addEventListener("submit", (e) => {
     }
     if (opcionInput.value == 4) { // se ejecuta el codigo si el valor del input es 4
         const alumnosEnLs = JSON.parse(localStorage.getItem("listaAlumnos"));
-        const printAlumno = alumnosEnLs.find((alumno) => alumno.edad == datoInput.value); 
+        const printAlumno = alumnosEnLs.find((alumno) => alumno.edad == datoInput.value);
         if (printAlumno == null) {
             Swal.fire({
                 icon: 'warning',

@@ -85,7 +85,7 @@ buscarForm.addEventListener("submit", (e) => {
     if (opcionInput.value == 1) {
         const alumnosEnLs = JSON.parse(localStorage.getItem("listaAlumnos"));
         const printAlumno = alumnosEnLs.filter((alumno) => alumno.nombre === datoInput.value.toLowerCase().trim());
-        if (printAlumno == null) {
+        if (printAlumno.length === 0) {
             Swal.fire({
                 icon: 'warning',
                 title: 'Atención...',
@@ -134,7 +134,7 @@ buscarForm.addEventListener("submit", (e) => {
     if (opcionInput.value == 2) {
         const alumnosEnLs = JSON.parse(localStorage.getItem("listaAlumnos"));
         const printAlumno = alumnosEnLs.filter((alumno) => alumno.apellido === datoInput.value.toLowerCase().trim()); 
-        if (printAlumno == null) {
+        if (printAlumno.length === 0) {
             Swal.fire({
                 icon: 'warning',
                 title: 'Atención...',
@@ -184,7 +184,7 @@ buscarForm.addEventListener("submit", (e) => {
     if (opcionInput.value == 3) {
         const alumnosEnLs = JSON.parse(localStorage.getItem("listaAlumnos"));
         const printAlumno = alumnosEnLs.filter((alumno) => alumno.legajo == datoInput.value); 
-        if (printAlumno == null) {
+        if (printAlumno.length === 0) {
             Swal.fire({
                 icon: 'warning',
                 title: 'Atención...',
@@ -235,7 +235,7 @@ buscarForm.addEventListener("submit", (e) => {
     if (opcionInput.value == 4) {
         const alumnosEnLs = JSON.parse(localStorage.getItem("listaAlumnos"));
         const printAlumno = alumnosEnLs.filter((alumno) => alumno.edad == datoInput.value); 
-        if (printAlumno == null) {
+        if (printAlumno.length === 0) {
             Swal.fire({
                 icon: 'warning',
                 title: 'Atención...',
