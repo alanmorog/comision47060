@@ -1,6 +1,5 @@
 @import 'variables';
 
-
 body {
     background-color: $colorFondo;
     font-family: $fuentes;
@@ -35,7 +34,7 @@ body {
 
     section {
         display: inline-grid;
-        background-color: grey;
+        background-color: $colorDiv;
         width: 400px;
         height: auto;
         margin: 20px;

@@ -7,6 +7,8 @@
     <title>eliminar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../sass/main.css">
 </head>
@@ -53,15 +55,22 @@
         <div class="form-group">
             <ul class="lista">
                 <h5>Ingresa el numero que corresponde</h5>
-                
+
                 <form action="" id="buscar-form" class="form">
                     <h6>Ingresa el legajo a eliminar</h6>
-                    <input type="text" id="dato-input" class="form-input">
+                    <input type="text" placeholder="Ingrese un legajo" id="dato-input" class="form-input">
                     <input type="submit" id="buscar-submit" class="form-submit" value="Eliminar">
                 </form>
             </ul>
         </div>
     </section>
+
+    <section class="description-info">
+        <button id="button-info">Apartado "Eliminar" Información</button>
+        <div id="contenedor-info">
+        </div>
+    </section>
+
 
     <table class="table table-striped">
         <thead>
@@ -75,13 +84,16 @@
         <tbody id="tbody-buscar">
         </tbody>
     </table>
-    <script src="../classes/ListaAlumnos.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.all.min.js"></script>
     <script src="../scripts/eliminar.js"></script>
-    
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+
 </body>
 
 </html>
