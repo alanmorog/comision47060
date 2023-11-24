@@ -25,7 +25,8 @@ const alumnosEnLs = JSON.parse(localStorage.getItem("listaAlumnos"));
 
 
 //Creando un fetch a partir de un JSON local usando async y await--------------
-listaAlumnosFlecha();
+const ruta = "../scripts/listaAlumnos.json";
+listaAlumnosFlecha(ruta);
 
 //funcion que crea en el page informacion que puede ayudar a entender el sistema al usuario
 descriptionUso.addEventListener("click", clickInfoAdd);

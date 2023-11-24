@@ -22,7 +22,8 @@ const contenedorInfo = document.querySelector("#contenedor-info");
 const alumnosEnLs = JSON.parse(localStorage.getItem("listaAlumnos"));
 
 //Creando un fetch a partir de un JSON local usando async y await--------------
-listaAlumnosFlecha();
+const ruta = "../scripts/listaAlumnos.json";
+listaAlumnosFlecha(ruta);
 
 if (localStorage.getItem("listaAlumnos") != null) {
     summonLista(alumnosEnLs);

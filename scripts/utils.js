@@ -1,6 +1,7 @@
-const listaAlumnosFlecha = async () => {
+
+const listaAlumnosFlecha = async (ruta) => {
     try { //intenta cargar los datos que tiene guardado el archivo JSON y si no puede salta un cartel de error 
-        const listaAlumnosFetch = await fetch("../scripts/listaAlumnos.json");
+        const listaAlumnosFetch = await fetch(`${ruta}`);
         const listaAlumnos = await listaAlumnosFetch.json();
         if (localStorage.getItem("listaAlumnos") == null) {
             const listaAlumnosJSON = JSON.stringify(listaAlumnos);
@@ -16,6 +17,7 @@ const listaAlumnosFlecha = async () => {
         });
     }
 }
+
 
 //funcion informacion sobre la pagina buscar
 
